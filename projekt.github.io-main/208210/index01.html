@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System monitorowania poziomu cukru</title>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <h1>System monitorowania poziomu cukru</h1>
+
+    <!-- Informacja o użytkowniku -->
+    <div id="user-info">
+        <p>[Zalogowany użytkownik]</p>
+    </div>
+
+    <!-- Menu nawigacyjne -->
+    <nav>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#history">Historia</a></li>
+            <li><a href="#analytics">Analizy</a></li>
+            <li><a href="#settings">Ustawienia</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+<!-- ================= DASHBOARD ================= -->
+<section id="dashboard">
+    <h2>Dashboard</h2>
+
+    <!-- Kontener dashboardu -->
+    <div id="dashboard-container">
+
+        <!-- Główny panel aktualnego poziomu cukru -->
+        <div class="dashboard-card" id="current-glucose-card">
+            <h3>Aktualny poziom cukru</h3>
+            <p id="current-glucose">[Aktualny poziom cukru]</p>
+            <p id="last-measurement-time">[Data i godzina ostatniego pomiaru]</p>
+        </div>
+
+        <!-- Mini wykres -->
+        <div class="dashboard-card">
+            <h3>Ostatnie 24 godziny</h3>
+            <div id="mini-chart">
+                [Tutaj zostanie wygenerowany wykres z ostatnich 24h]
+            </div>
+        </div>
+
+        <!-- Podsumowanie dnia -->
+        <div class="dashboard-card">
+            <h3>Podsumowanie dnia</h3>
+            <ul>
+                <li>Średnia: <span id="daily-average">[Placeholder]</span></li>
+                <li>Liczba pomiarów: <span id="daily-count">[Placeholder]</span></li>
+                <li>Min: <span id="daily-min">[Placeholder]</span></li>
+                <li>Max: <span id="daily-max">[Placeholder]</span></li>
+            </ul>
+        </div>
+
+        <!-- Alerty -->
+        <div class="dashboard-card" id="alerts">
+            <h3>Alerty i przypomnienia</h3>
+            <p>[Miejsce na komunikaty o niskim / wysokim cukrze]</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= FORMULARZ ================= -->
+<section id="add-measurement">
+    <h2>Dodaj pomiar</h2>
+
+    <!-- Formularz -->
+    <!-- Walidacja danych będzie realizowana w JavaScript -->
+    <form id="measurement-form">
+
+        <div>
+            <label for="glucose">Poziom cukru (mg/dL):</label>
+            <input type="number" id="glucose" name="glucose">
+        </div>
+
+        <div>
+            <label for="date">Data pomiaru:</label>
+            <input type="date" id="date" name="date">
+        </div>
+
+        <div>
+            <label for="time">Godzina pomiaru:</label>
+            <input type="time" id="time" name="time">
+        </div>
+
+        <div>
+            <label for="insulin">Dawka insuliny (opcjonalnie):</label>
+            <input type="number" id="insulin" name="insulin">
+        </div>
+
+        <div>
+            <label for="note">Notatka (opcjonalnie):</label>
+            <textarea id="note" name="note"></textarea>
+        </div>
+
+        <button type="submit">Zapisz pomiar</button>
+    </form>
+</section>
+
+<!-- ================= HISTORIA ================= -->
+<section id="history">
+    <h2>Historia pomiarów</h2>
+
+    <table id="history-table">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Godzina</th>
+                <th>Poziom cukru</th>
+                <th>Insulina</th>
+                <th>Notatka</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>[YYYY-MM-DD]</td>
+                <td>[HH:MM]</td>
+                <td>[Wartość]</td>
+                <td>[Dawka]</td>
+                <td>[Notatka]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Dane będą generowane dynamicznie -->
+</section>
+
+<!-- ================= ANALIZY ================= -->
+<section id="analytics">
+    <h2>Analizy i statystyki</h2>
+
+    <div class="analytics-card">
+        <h3>Trendy</h3>
+        <p>[Wykres trendów poziomu cukru]</p>
+    </div>
+
+    <div class="analytics-card">
+        <h3>Podsumowania okresowe</h3>
+        <p>[Podsumowanie tygodniowe / miesięczne]</p>
+    </div>
+</section>
+
+<!-- ================= EDUKACJA ================= -->
+<section id="education">
+    <h2>Informacje edukacyjne</h2>
+    <p>[Informacje o cukrzycy]</p>
+    <p>[Informacje o insulinie]</p>
+    <p>[Zalecenia ogólne]</p>
+</section>
+
+<!-- ================= USTAWIENIA ================= -->
+<section id="settings">
+    <h2>Ustawienia</h2>
+    <ul>
+        <li>[Zarządzanie kontem]</li>
+        <li>[Eksport danych]</li>
+        <li>[Wyloguj się]</li>
+    </ul>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>[Dane autora projektu]</p>
+    <p>[Projekt edukacyjny – szkielet aplikacji]</p>
+</footer>
+
+</body>
+</html>

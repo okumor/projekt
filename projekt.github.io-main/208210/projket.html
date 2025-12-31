@@ -1,0 +1,160 @@
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Meta informacje podstawowe -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System monitorowania poziomu cukru</title>
+</head>
+<body>
+
+    <!-- Nagłówek strony z tytułem i prostym menu -->
+    <header>
+        <h1>System monitorowania poziomu cukru</h1>
+        <nav>
+            <!-- Proste menu nawigacyjne prowadzące do sekcji na tej samej stronie -->
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#history">Historia pomiarów</a></li>
+                <li><a href="#analytics">Analizy i statystyki</a></li>
+                <li><a href="#settings">Ustawienia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sekcja: Dashboard (strona główna) -->
+        <section id="dashboard">
+            <!-- Panel aktualnego poziomu cukru -->
+            <h2>Dashboard</h2>
+            <article>
+                <h3>Aktualny poziom cukru</h3>
+                <p>[Aktualny poziom cukru]</p>
+                <p>[Data i godzina ostatniego pomiaru]</p>
+            </article>
+
+            <!-- Mini-wykres ostatnich 24h -->
+            <article>
+                <h3>Ostatnie 24 godziny</h3>
+                <p>[Tutaj zostanie wyświetlony wykres poziomu cukru z ostatnich 24 godzin]</p>
+            </article>
+
+            <!-- Podsumowanie dnia -->
+            <article>
+                <h3>Podsumowanie dnia</h3>
+                <ul>
+                    <li>Średni poziom cukru: [Placeholder]</li>
+                    <li>Liczba pomiarów: [Placeholder]</li>
+                    <li>Minimalna wartość: [Placeholder]</li>
+                    <li>Maksymalna wartość: [Placeholder]</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Sekcja: Formularz "Dodaj pomiar" -->
+        <section id="add-measurement">
+            <h2>Dodaj pomiar</h2>
+            <!-- Formularz do dodawania nowego pomiaru -->
+            <!-- Uwaga: Walidacja formularza będzie realizowana w JavaScript w przyszłości -->
+            <form action="#" method="post">
+                <div>
+                    <label for="poziom-cukru">Poziom cukru:</label>
+                    <input type="number" id="poziom-cukru" name="poziom_cukru" placeholder="[Wpisz poziom cukru]">
+                </div>
+                <div>
+                    <label for="data-pomiaru">Data pomiaru:</label>
+                    <input type="date" id="data-pomiaru" name="data_pomiaru" placeholder="[Wybierz datę]">
+                </div>
+                <div>
+                    <label for="godzina-pomiaru">Godzina pomiaru:</label>
+                    <input type="time" id="godzina-pomiaru" name="godzina_pomiaru" placeholder="[Wybierz godzinę]">
+                </div>
+                <div>
+                    <label for="dawka-insuliny">Dawka insuliny (opcjonalnie):</label>
+                    <input type="number" id="dawka-insuliny" name="dawka_insuliny" placeholder="[Wpisz dawkę insuliny]">
+                </div>
+                <div>
+                    <label for="notatka">Notatka (opcjonalnie):</label>
+                    <textarea id="notatka" name="notatka" rows="4" placeholder="[Dodaj krótką notatkę]"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Zapisz pomiar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Sekcja: Historia pomiarów -->
+        <section id="history">
+            <h2>Historia pomiarów</h2>
+            <!-- Tabela z historią pomiarów -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Godzina</th>
+                        <th>Poziom cukru</th>
+                        <th>Insulina</th>
+                        <th>Notatka</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Przykładowy wiersz z placeholderami -->
+                    <tr>
+                        <td>[YYYY-MM-DD]</td>
+                        <td>[HH:MM]</td>
+                        <td>[Wartość]</td>
+                        <td>[Dawka]</td>
+                        <td>[Krótka notatka]</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- [Dane będą generowane dynamicznie za pomocą JavaScript] -->
+        </section>
+
+        <!-- Sekcja: Analizy i statystyki -->
+        <section id="analytics">
+            <h2>Analizy i statystyki</h2>
+            <!-- Miejsce na wykresy trendów -->
+            <article>
+                <h3>Wykresy trendów</h3>
+                <p>[Wykres trendów poziomu cukru]</p>
+            </article>
+            <!-- Miejsce na podsumowania tygodniowe / miesięczne -->
+            <article>
+                <h3>Podsumowania</h3>
+                <p>[Podsumowanie statystyczne]</p>
+                <p>[Tutaj w przyszłości zostanie wygenerowany wykres]</p>
+            </article>
+        </section>
+
+        <!-- Sekcja: Informacje edukacyjne -->
+        <section id="education">
+            <h2>Informacje edukacyjne</h2>
+            <p>[Informacje o cukrzycy]</p>
+            <p>[Informacje o insulinie]</p>
+            <p>[Zalecenia ogólne]</p>
+            <p>[Miejsce na informacje edukacyjne o cukrzycy]</p>
+        </section>
+
+        <!-- Sekcja: Ustawienia -->
+        <section id="settings">
+            <h2>Ustawienia</h2>
+            <!-- Prosta lista opcji ustawień (placeholders) -->
+            <ul>
+                <li>[Zarządzanie kontem użytkownika]</li>
+                <li>[Eksport danych]</li>
+                <li>[Wyloguj się]</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Stopka strony -->
+    <footer>
+        <p>[Dane autora projektu]</p>
+        <p>[Informacje o projekcie i wersji szkieletu aplikacji]</p>
+    </footer>
+
+</body>
+</html>
+```
