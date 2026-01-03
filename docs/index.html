@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktywny system monitorowania poziomu cukru we krwi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER Z PROFILU I MENU -->
+<header>
+  <div id="user-profile">
+    <img src="placeholder-profile.png" alt="Profil użytkownika" id="profile-pic">
+    <span>Jan Kowalski</span>
+  </div>
+  <h1>Interaktywny system monitorowania poziomu cukru we krwi</h1>
+  <nav>
+    <ul>
+      <!-- data-target wskazuje sekcję, którą ma pokazać JS -->
+      <li><a href="#" data-target="dashboard">Strona główna</a></li>
+      <li><a href="#" data-target="history">Historia</a></li>
+      <li><a href="#" data-target="analytics">Analizy</a></li>
+      <li><a href="#" data-target="settings">Ustawienia</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- SZYBKI FORMULARZ DODAWANIA POMIARU -->
+<div class="dashboard-card" id="quick-add-form">
+  <h2>Dodaj pomiar</h2>
+  <form id="quick-measurement-form">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+      <div>
+        <label for="quick-glucose">Glukoza (mg/dL):</label>
+        <input type="number" id="quick-glucose" required min="20" max="800" 
+               style="width: 100%; padding: 8px;" placeholder="np. 120">
+      </div>
+      <div>
+        <label for="quick-insulin">Insulina (IU):</label>
+        <input type="number" id="quick-insulin" step="0.5" min="0" max="50"
+               style="width: 100%; padding: 8px;" placeholder="np. 5">
+      </div>
+    </div>
+
+    <div style="margin-bottom: 10px;">
+      <label for="quick-carbs">Węglowodany (g):</label>
+      <input type="number" id="quick-carbs" step="1" min="0" max="300"
+             style="width: 100%; padding: 8px;" placeholder="np. 30">
+    </div>
+    
+    <div style="margin-bottom: 10px;">
+      <label for="quick-note">Notatka:</label>
+      <input type="text" id="quick-note" 
+             style="width: 100%; padding: 8px;" 
+             placeholder="np. Po śniadaniu">
+    </div>
+    
+    <button type="submit" 
+            style="background: #28a745; color: white; border: none; padding: 10px; width: 100%; border-radius: 5px; cursor: pointer;">
+      📝 Dodaj pomiar
+    </button>
+  </form>
+</div>
+  <!-- DASHBOARD -->
+  <section id="dashboard">
+    <div class="dashboard-card" id="current-glucose-card">
+      <h2>Aktualny poziom glukozy</h2>
+      <p>[Aktualny poziom glukozy]</p>
+    </div>
+
+    <div class="dashboard-card" id="mini-chart">
+      <h2>Ostatnie 24h</h2>
+      <p>[Mini wykres poziomu glukozy]</p>
+    </div>
+
+    <div class="dashboard-card" id="daily-summary">
+      <h2>Podsumowanie dnia</h2>
+      <ul>
+        <li>Średni poziom glukozy: [Placeholder]</li>
+        <li>Liczba pomiarów: [Placeholder]</li>
+        <li>Minimalna wartość: [Placeholder]</li>
+        <li>Maksymalna wartość: [Placeholder]</li>
+      </ul>
+    </div>
+
+
+  </section>
+
+  <!-- PODSTRONY UKRYTE NA START -->
+  <section id="history" class="hidden">
+    <h2>Historia pomiarów</h2>
+    <div class="table-wrap">
+      <table class="history">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Godzina</th>
+            <th>Poziom glukozy</th>
+            <th>Insulina (IU)</th>
+            <th>Węglowodany (g)</th>
+            <th>Notatka</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[YYYY-MM-DD]</td>
+            <td>[HH:MM]</td>
+            <td>[Wartość]</td>
+            <td>[Dawka]</td>
+            <td>[Notatka]</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="analytics" class="hidden">
+    <h2>Analizy i statystyki</h2>
+    <div class="analytics-card">
+      <h3>Wykresy trendów</h3>
+      <div class="placeholder" id="trend-placeholder"></div>
+    </div>
+    <div class="analytics-card">
+      <h3>Podsumowania</h3>
+      <div class="placeholder">[Statystyki tygodniowe/miesięczne]</div>
+    </div>
+  </section>
+
+  <section id="settings" class="hidden">
+    <h2>Ustawienia</h2>
+    <ul class="settings-list">
+      <li>Zarządzanie kontem użytkownika</li>
+      <li>Eksport danych</li>
+      <li>Wyloguj się</li>
+    </ul>
+  </section>
+</main>
+
+
+
+<footer>
+  <p>Interaktywny system monitorowania poziomu cukru we krwi - wersja demo</p>
+</footer>
+
+<!-- SKRYPT ZAŁADOWANY NA SAMYM KOŃCU -->
+<script src="script.js"></script>
+</body>
+</html>
