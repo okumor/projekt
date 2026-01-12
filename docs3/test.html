@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor Cukru - Wersja Testowa</title>
+  <link rel="stylesheet" href="test.css">
+  <script src="test.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Monitor Poziomu Cukru</h1>
+  <p>Prosta aplikacja do śledzenia glukozy</p>
+</header>
+
+<nav>
+  <a href="#" class="menu-link" data-page="dodaj">Dodaj pomiar</a>
+  <a href="#" class="menu-link" data-page="lista">Lista pomiarów</a>
+  <a href="#" class="menu-link" data-page="statystyki">Statystyki</a>
+</nav>
+
+<main>
+  <!-- SEKCJA DODAWANIA -->
+  <div id="dodaj" class="page">
+    <h2>Dodaj nowy pomiar</h2>
+    
+    <div class="card">
+      <form id="form-pomiar">
+        <label for="glukoza">Poziom glukozy (mg/dL):</label>
+        <input type="number" id="glukoza" required min="20" max="600">
+        <br><br>
+        
+        <label for="insulina">Insulina (jednostki):</label>
+        <input type="number" id="insulina" min="0" max="50" step="0.5">
+        <br><br>
+        
+        <label for="wegle">Węglowodany (gramy):</label>
+        <input type="number" id="wegle" min="0" max="300">
+        <br><br>
+        
+        <label for="notatka">Notatka:</label>
+        <input type="text" id="notatka" placeholder="np. po śniadaniu">
+        <br><br>
+        
+        <button type="submit" class="btn">Zapisz pomiar</button>
+      </form>
+    </div>
+    
+    <div class="card">
+      <h3>Ostatni pomiar:</h3>
+      <div id="ostatni-wynik">
+        <p><strong>Glukoza:</strong> <span id="last-glukoza">-</span></p>
+        <p><strong>Status:</strong> <span id="last-status">Brak danych</span></p>
+        <p><strong>Data:</strong> <span id="last-data">-</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEKCJA LISTY -->
+  <div id="lista" class="page hidden">
+    <h2>Historia pomiarów</h2>
+    
+    <div class="card">
+      <table id="tabela-pomiary">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Godzina</th>
+            <th>Glukoza</th>
+            <th>Insulina</th>
+            <th>Węgle</th>
+            <th>Notatka</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-pomiary">
+        </tbody>
+      </table>
+      
+      <p id="brak-danych" class="hidden"><em>Brak zapisanych pomiarów</em></p>
+    </div>
+  </div>
+
+  <!-- SEKCJA STATYSTYK -->
+  <div id="statystyki" class="page hidden">
+    <h2>Statystyki</h2>
+    
+    <div class="card">
+      <h3>Podsumowanie</h3>
+      <ul>
+        <li><strong>Liczba pomiarów:</strong> <span id="stat-liczba">0</span></li>
+        <li><strong>Średni poziom:</strong> <span id="stat-srednia">-</span> mg/dL</li>
+        <li><strong>Najniższa wartość:</strong> <span id="stat-min">-</span> mg/dL</li>
+        <li><strong>Najwyższa wartość:</strong> <span id="stat-max">-</span> mg/dL</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <h3>Rozkład poziomów</h3>
+      <ul>
+        <li>Niski (&lt;70): <span id="poziom-niski">0</span></li>
+        <li>Normalny (70-140): <span id="poziom-normalny">0</span></li>
+        <li>Wysoki (140-180): <span id="poziom-wysoki">0</span></li>
+        <li>Bardzo wysoki (&gt;180): <span id="poziom-bardzo-wysoki">0</span></li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <h3>Mini wykres</h3>
+      <div id="wykres-prosty"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Monitor Cukru - Wersja Testowa</p>
+</footer>
+
+<script src="test-script.js"></script>
+</body>
+</html>
